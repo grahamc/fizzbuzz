@@ -26,10 +26,10 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase
     {
         $expectedKeys = range(1, 100);
 
-        $this->assertEquals($expectedKeys, array_values($numbers));
+        $this->assertEquals($expectedKeys, array_values($numbers),
+                'Numbers should be sequential, and range from 1 to 100.');
     }
 
-    
     public function dataReplacement()
     {
         $fuzz = new FizzBuzz();
@@ -53,7 +53,8 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase
             // Ensure Fizz is first
             $prefix = substr($value, 0, 4);
 
-            $this->assertEquals('Fizz', $prefix);
+            $this->assertEquals('Fizz', $prefix,
+                    'Numbers which are mod 3 should begin with Fizz');
         }
     }
 
@@ -68,7 +69,8 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase
             // Ensure Buzz is last
             $suffix = substr($value, -4);
 
-            $this->assertEquals('Buzz', $suffix);
+            $this->assertEquals('Buzz', $suffix,
+                    'Numbers which are mod 5 should end with Buzz');
         }
     }
 
@@ -80,7 +82,8 @@ class FizzBuzzTest extends PHPUnit_Framework_TestCase
     public function testNeither($key, $value)
     {
         if ($key % 5 != 0 && $key % 3 != 0) {
-            $this->assertEquals($key, $value);
+            $this->assertEquals($key, $value,
+                    'Numbers which are neither mod 3 nor 5 should equal the key.');
         }
     }
 
