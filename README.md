@@ -7,6 +7,7 @@
 ## Example:
 
 ```
+FizzBuzz
 1
 2
 Fizz
@@ -15,6 +16,12 @@ Buzz
 Fizz
 7
 8
-Fizzkj
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
 ```
 
